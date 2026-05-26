@@ -13,7 +13,6 @@ const PHRASE_SITUATIONS = [
       { label: "Too formal", example: "Please accept my sincerest apologies for this oversight." },
     ],
     tip: "'This week got away from me' is warm AND professional. It admits delay without over-explaining or sounding defensive.",
-    color: "#2C1810", light: "#F5F5F5",
   },
   {
     id: "p2", category: "Following Up", emoji: "◎",
@@ -27,7 +26,6 @@ const PHRASE_SITUATIONS = [
       { label: "Too formal", example: "I am writing to inquire as to whether you have reviewed the aforementioned proposal." },
     ],
     tip: "'Did you get a chance to' follows up without pressure — it assumes the person is busy, not ignoring you.",
-    color: "#2C1810", light: "#F5F5F5",
   },
   {
     id: "p3", category: "Firm but Kind", emoji: "◎",
@@ -41,7 +39,6 @@ const PHRASE_SITUATIONS = [
       { label: "Too harsh", example: "This is unacceptable. Fix it immediately." },
     ],
     tip: "'Moving forward' signals a boundary without aggression. It focuses on the future, not blame.",
-    color: "#2C1810", light: "#F5F5F5",
   },
   {
     id: "p4", category: "Thank You", emoji: "◎",
@@ -55,7 +52,6 @@ const PHRASE_SITUATIONS = [
       { label: "Too formal", example: "Thank you for your assistance during this period." },
     ],
     tip: "'It made a real difference' tells someone their action had impact — which matters more than just saying thanks.",
-    color: "#2C1810", light: "#F5F5F5",
   },
   {
     id: "p5", category: "Explaining Delay", emoji: "◎",
@@ -69,7 +65,6 @@ const PHRASE_SITUATIONS = [
       { label: "Too vague", example: "There have been some delays. We'll update you soon." },
     ],
     tip: "'Heads-up' signals transparency. Pair it with a brief status + next step — that's what professionals want.",
-    color: "#2C1810", light: "#F5F5F5",
   },
 ];
 
@@ -83,7 +78,6 @@ const VOCAB_ITEMS = [
     toneNote: "Feels more final than 'outdated.' Use when something has genuinely been replaced, not just old-fashioned.",
     similarWords: [{ word: "outdated", feel: "softer, more conversational" }, { word: "irrelevant", feel: "stronger, can sound dismissive" }, { word: "dated", feel: "informal, casual" }],
     examples: ["That sizing system is becoming obsolete as brands shift to 3D fit tools.", "Manual WIP tracking may be obsolete once AI dashboards are standard.", "Some vendor processes feel obsolete compared to industry expectations now."],
-    color: "#2C1810",
   },
   {
     id: "v2", word: "streamline", category: "Operations", emoji: "◈",
@@ -94,7 +88,6 @@ const VOCAB_ITEMS = [
     toneNote: "Action-oriented and positive. Implies improvement without criticizing the current state.",
     similarWords: [{ word: "simplify", feel: "more general, slightly informal" }, { word: "optimize", feel: "more technical, data-driven" }, { word: "improve", feel: "vague, less specific" }],
     examples: ["We're looking to streamline the sample review process to cut turnaround time.", "Can we streamline how vendors submit updates so nothing gets lost?", "Streamlining onboarding would save both sides a lot of back-and-forth."],
-    color: "#2C1810",
   },
   {
     id: "v3", word: "transparent", category: "Communication", emoji: "◈",
@@ -104,8 +97,7 @@ const VOCAB_ITEMS = [
     definition: "Open and honest, not hiding information that others should know.",
     toneNote: "Warmer than 'honest.' Signals you're proactively sharing, not just answering when asked.",
     similarWords: [{ word: "honest", feel: "direct, slightly blunt" }, { word: "clear", feel: "neutral, about clarity" }, { word: "forthcoming", feel: "more formal, old-fashioned" }],
-    examples: ["I want to be transparent about the timeline shift and what caused it.", "Being transparent with vendors early prevents bigger issues later.", "She appreciated that I was transparent about the budget constraints from the start."],
-    color: "#2C1810",
+    examples: ["I want to be transparent about the timeline shift and what caused it.", "Being transparent with vendors early prevents bigger issues later.", "She appreciated that I was transparent about budget constraints from the start."],
   },
   {
     id: "v4", word: "proactive", category: "Professional", emoji: "◈",
@@ -116,7 +108,6 @@ const VOCAB_ITEMS = [
     toneNote: "Signals leadership and initiative. Use to describe your own behavior or what you expect from others.",
     similarWords: [{ word: "prepared", feel: "more passive, about readiness" }, { word: "anticipate", feel: "verb form, slightly more formal" }, { word: "ahead of it", feel: "casual phrase version" }],
     examples: ["I wanted to be proactive and flag the shipping delay before it affects your launch.", "Being proactive with communication is something I prioritize with every client.", "The team was proactive about identifying the fit issue before production started."],
-    color: "#2C1810",
   },
   {
     id: "v5", word: "nuanced", category: "Communication", emoji: "◈",
@@ -127,21 +118,43 @@ const VOCAB_ITEMS = [
     toneNote: "Signals sophistication without condescension. Use to invite deeper thinking, not shut someone down.",
     similarWords: [{ word: "complex", feel: "neutral, about difficulty" }, { word: "complicated", feel: "slightly negative, implies messy" }, { word: "layered", feel: "visual metaphor, softer" }],
     examples: ["Fit feedback is more nuanced than just 'too big' or 'too small.'", "The client's concern is nuanced — it's not about cost, it's about timing.", "A nuanced understanding of body shape separates good sizing from great sizing."],
-    color: "#2C1810",
   },
 ];
 
-const font = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+// ── BRAND TOKENS ──────────────────────────────────────────────────────────────
+const B = {
+  parchment: "#FAF8F4",
+  warmWhite: "#FDFCFA",
+  clay: "#D97757",
+  clayDeep: "#B85C38",
+  charcoal: "#1C1917",
+  sand: "#E8E0D5",
+  linen: "#F0EBE3",
+  dusk: "#78716C",
+  mist: "#A8A29E",
+  success: "#4A7C59",
+  successLight: "#EFF3EE",
+  warning: "#C07A2A",
+  warningLight: "#FDF4E7",
+  error: "#C0392B",
+  errorLight: "#FDF0EE",
+  serif: "'DM Serif Display', Georgia, serif",
+  sans: "'Instrument Sans', 'Inter', system-ui, sans-serif",
+  radius: { sm: "8px", md: "14px", lg: "20px", xl: "28px", pill: "100px" },
+  shadow: "0 1px 4px rgba(28,25,23,0.07)",
+  shadowMd: "0 4px 16px rgba(28,25,23,0.09)",
+};
 
-// ── SHARED UI ─────────────────────────────────────────────────────────────────
+// ── SHARED COMPONENTS ─────────────────────────────────────────────────────────
 
-function ProgressDots({ current, total, color }) {
+function ProgressDots({ current, total }) {
   return (
-    <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+    <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
       {Array.from({ length: total }).map((_, i) => (
         <div key={i} style={{
-          width: i === current ? "20px" : "6px", height: "6px",
-          borderRadius: "3px", background: i === current ? color : "#E8D9CA",
+          width: i === current ? "18px" : "5px", height: "5px",
+          borderRadius: "3px",
+          background: i === current ? B.clay : B.sand,
           transition: "all 0.3s ease",
         }} />
       ))}
@@ -149,20 +162,46 @@ function ProgressDots({ current, total, color }) {
   );
 }
 
-function PillBtn({ children, onClick, color = "#2C1810", bg = "#EDE0D4", disabled }) {
+function PillBtn({ children, onClick, variant = "primary", disabled }) {
+  const styles = {
+    primary: { background: B.clay, color: "#fff", border: "none", boxShadow: `0 2px 8px rgba(217,119,87,0.28)` },
+    secondary: { background: B.linen, color: B.charcoal, border: `1.5px solid ${B.sand}` },
+    dark: { background: B.charcoal, color: "#fff", border: "none" },
+    success: { background: B.success, color: "#fff", border: "none" },
+  };
   return (
     <button onClick={onClick} disabled={disabled} style={{
-      background: bg, color, border: "none", borderRadius: "100px",
-      padding: "13px 24px", fontSize: "15px", fontWeight: "700",
-      fontFamily: font, cursor: disabled ? "not-allowed" : "pointer",
-      opacity: disabled ? 0.35 : 1, transition: "transform 0.1s, opacity 0.2s",
-      letterSpacing: "-0.2px",
+      ...styles[variant],
+      borderRadius: B.radius.pill, padding: "12px 24px",
+      fontSize: "15px", fontWeight: "600", fontFamily: B.sans,
+      cursor: disabled ? "not-allowed" : "pointer",
+      opacity: disabled ? 0.38 : 1,
+      transition: "transform 0.1s, opacity 0.15s",
+      letterSpacing: "-0.1px",
     }}
       onMouseDown={e => { if (!disabled) e.currentTarget.style.transform = "scale(0.97)"; }}
       onMouseUp={e => { e.currentTarget.style.transform = "scale(1)"; }}
-    >
-      {children}
-    </button>
+      onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; }}
+    >{children}</button>
+  );
+}
+
+function SituationCard({ situation, category, color = B.clay, idx, total }) {
+  return (
+    <div style={{
+      background: B.charcoal, borderRadius: B.radius.xl,
+      padding: "24px", marginBottom: "16px",
+      position: "relative", overflow: "hidden",
+    }}>
+      <div style={{ position: "absolute", right: "-10px", top: "-10px", width: "100px", height: "100px", borderRadius: "50%", background: B.clay, opacity: 0.08 }} />
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "14px" }}>
+        <div style={{ fontSize: "10px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: B.clay }}>{category}</div>
+        <ProgressDots current={idx} total={total} />
+      </div>
+      <div style={{ fontSize: "16px", fontFamily: B.serif, color: B.warmWhite, lineHeight: "1.5", fontStyle: "italic" }}>
+        "{situation}"
+      </div>
+    </div>
   );
 }
 
@@ -172,51 +211,56 @@ function Home({ learned, onNav }) {
   const phraseCount = learned.filter(l => l.type === "phrase").length;
   const vocabCount = learned.filter(l => l.type === "vocab").length;
 
-  const sections = [
-    { id: "phrases", label: "Phrase\nPractice", sub: "5 situations", color: "#2C1810", emoji: "◎" },
-    { id: "vocab", label: "Vocabulary\nBuilder", sub: "5 words", color: "#2C1810", emoji: "◈" },
-    ...(learned.length > 0 ? [{ id: "review", label: "Review\nQueue", sub: `${learned.length} saved`, color: "#2C1810", emoji: "↻" }] : []),
-  ];
-
   return (
     <div style={{ padding: "0 20px 100px" }}>
       {/* Hero */}
-      <div style={{ marginBottom: "32px" }}>
-        <div style={{
-          fontSize: "13px", fontWeight: "700", letterSpacing: "2px",
-          textTransform: "uppercase", color: "#A0856C", marginBottom: "10px",
-        }}>Communication Confidence</div>
-        <div style={{ fontSize: "36px", fontWeight: "900", lineHeight: "1.1", letterSpacing: "-1.5px", color: "#2C1810" }}>
-          Help me say<br />this <span style={{ color: "#2C1810" }}>naturally.</span>
+      <div style={{ marginBottom: "28px" }}>
+        <div style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "2.5px", textTransform: "uppercase", color: B.mist, marginBottom: "10px" }}>
+          Communication Confidence
+        </div>
+        <div style={{ fontSize: "38px", fontFamily: B.serif, color: B.charcoal, lineHeight: "1.1", letterSpacing: "-1px", marginBottom: "4px" }}>
+          Help me say
+        </div>
+        <div style={{ fontSize: "38px", fontFamily: B.serif, color: B.clay, lineHeight: "1.1", letterSpacing: "-1px", fontStyle: "italic" }}>
+          this naturally.
         </div>
       </div>
 
-      {/* Stats row */}
-      <div style={{ display: "flex", gap: "12px", marginBottom: "32px" }}>
+      {/* Stats */}
+      <div style={{ display: "flex", gap: "10px", marginBottom: "28px" }}>
         {[{ n: phraseCount, label: "Phrases" }, { n: vocabCount, label: "Words" }, { n: learned.length, label: "Saved" }].map((s, i) => (
-          <div key={i} style={{ flex: 1, background: "#FAF7F2", borderRadius: "16px", padding: "16px 12px", textAlign: "center", border: "1.5px solid #F3F4F6" }}>
-            <div style={{ fontSize: "30px", fontWeight: "900", color: "#2C1810", letterSpacing: "-1px", lineHeight: 1 }}>{s.n}</div>
-            <div style={{ fontSize: "11px", color: "#A0856C", marginTop: "4px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "0.5px" }}>{s.label}</div>
+          <div key={i} style={{ flex: 1, background: B.warmWhite, borderRadius: B.radius.lg, padding: "14px 10px", textAlign: "center", border: `1.5px solid ${B.sand}` }}>
+            <div style={{ fontSize: "28px", fontFamily: B.serif, color: B.clay, lineHeight: 1, marginBottom: "4px" }}>{s.n}</div>
+            <div style={{ fontSize: "10px", color: B.mist, fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px" }}>{s.label}</div>
           </div>
         ))}
       </div>
 
-      {/* Big cards */}
-      {sections.map((s) => (
-        <div key={s.id} onClick={() => onNav(s.id)} style={{
-          background: s.color, borderRadius: "24px", padding: "28px 24px",
-          marginBottom: "14px", cursor: "pointer", position: "relative", overflow: "hidden",
+      {/* Nav cards */}
+      {[
+        { id: "phrases", label: "Phrase Practice", sub: "5 situations", desc: "Write your version. See the natural tone comparison." },
+        { id: "vocab", label: "Vocabulary", sub: "5 words", desc: "Fill in the blank. Unlock the word's meaning and feel." },
+        ...(learned.length > 0 ? [{ id: "review", label: "Review Queue", sub: `${learned.length} saved`, desc: "Items resurfacing at the right time." }] : []),
+      ].map((c, i) => (
+        <div key={c.id} onClick={() => onNav(c.id)} style={{
+          background: i === 0 ? B.charcoal : B.warmWhite,
+          borderRadius: B.radius.xl, padding: "22px 24px",
+          marginBottom: "12px", cursor: "pointer",
+          border: i === 0 ? "none" : `1.5px solid ${B.sand}`,
+          boxShadow: i === 0 ? B.shadowMd : B.shadow,
           transition: "transform 0.15s",
+          position: "relative", overflow: "hidden",
         }}
-          onMouseDown={e => { e.currentTarget.style.transform = "scale(0.98)"; }}
+          onMouseDown={e => { e.currentTarget.style.transform = "scale(0.99)"; }}
           onMouseUp={e => { e.currentTarget.style.transform = "scale(1)"; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; }}
         >
-          {/* Big emoji watermark */}
-          <div style={{ position: "absolute", right: "20px", top: "50%", transform: "translateY(-50%)", fontSize: "72px", opacity: 0.15, lineHeight: 1 }}>{s.emoji}</div>
-          <div style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "8px" }}>{s.sub}</div>
-          <div style={{ fontSize: "26px", fontWeight: "900", color: "#fff", letterSpacing: "-0.8px", lineHeight: "1.15", whiteSpace: "pre-line" }}>{s.label}</div>
-          <div style={{ marginTop: "20px", display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,0.15)", borderRadius: "100px", padding: "8px 16px" }}>
-            <span style={{ fontSize: "13px", fontWeight: "700", color: "#fff" }}>Start →</span>
+          {i === 0 && <div style={{ position: "absolute", right: "-20px", bottom: "-20px", width: "120px", height: "120px", borderRadius: "50%", background: B.clay, opacity: 0.12 }} />}
+          <div style={{ fontSize: "10px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: i === 0 ? B.clay : B.mist, marginBottom: "6px" }}>{c.sub}</div>
+          <div style={{ fontSize: "22px", fontFamily: B.serif, color: i === 0 ? B.warmWhite : B.charcoal, marginBottom: "6px", letterSpacing: "-0.3px" }}>{c.label}</div>
+          <div style={{ fontSize: "14px", color: i === 0 ? B.dusk : B.mist, lineHeight: "1.5", marginBottom: "16px" }}>{c.desc}</div>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: i === 0 ? "rgba(255,255,255,0.1)" : B.linen, borderRadius: B.radius.pill, padding: "7px 16px" }}>
+            <span style={{ fontSize: "13px", fontWeight: "600", color: i === 0 ? "#fff" : B.charcoal }}>Start →</span>
           </div>
         </div>
       ))}
@@ -239,39 +283,24 @@ function PhrasePractice({ onLearn, learned }) {
 
   return (
     <div style={{ padding: "0 20px 100px" }}>
-      {/* Header card */}
-      <div style={{ background: item.color, borderRadius: "24px", padding: "24px", marginBottom: "20px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-          <div>
-            <div style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "4px" }}>Situation</div>
-            <div style={{ fontSize: "13px", fontWeight: "700", color: "rgba(255,255,255,0.9)", letterSpacing: "0.5px" }}>{item.category}</div>
-          </div>
-          <ProgressDots current={idx} total={PHRASE_SITUATIONS.length} color="#fff" />
-        </div>
-        <div style={{ fontSize: "20px", fontWeight: "800", color: "#fff", lineHeight: "1.4", letterSpacing: "-0.5px" }}>
-          "{item.situation}"
-        </div>
-      </div>
+      <SituationCard situation={item.situation} category={item.category} idx={idx} total={PHRASE_SITUATIONS.length} />
 
-      {/* Write box */}
-      <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-        <div style={{ fontSize: "13px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "12px" }}>{item.prompt}</div>
+      {/* Write */}
+      <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+        <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "12px" }}>{item.prompt}</div>
         <textarea style={{
           width: "100%", boxSizing: "border-box",
-          background: "#FAF7F2", border: `2px solid ${revealed ? "#EDE0D4" : item.color}`,
-          borderRadius: "14px", padding: "16px", color: "#2C1810",
-          fontSize: "16px", fontFamily: font, lineHeight: "1.7",
-          resize: "none", minHeight: "110px", outline: "none",
+          background: B.parchment, border: `1.5px solid ${revealed ? B.sand : B.clay}`,
+          borderRadius: B.radius.md, padding: "14px 16px",
+          color: B.charcoal, fontSize: "15px", fontFamily: B.sans,
+          lineHeight: "1.7", resize: "none", minHeight: "100px", outline: "none",
           transition: "border-color 0.2s",
         }} value={input} onChange={e => setInput(e.target.value)}
           placeholder={item.placeholder} disabled={revealed} />
-
         {!revealed && (
-          <div style={{ marginTop: "14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div style={{ fontSize: "13px", color: "#C4A882" }}>{!canReveal ? "Write something first" : "Ready!"}</div>
-            <PillBtn onClick={() => setRevealed(true)} disabled={!canReveal} color="#fff" bg={item.color}>
-              See Answer →
-            </PillBtn>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px" }}>
+            <div style={{ fontSize: "13px", color: B.mist }}>{canReveal ? "Ready to compare" : "Write something first"}</div>
+            <PillBtn onClick={() => setRevealed(true)} disabled={!canReveal}>See Answer →</PillBtn>
           </div>
         )}
       </div>
@@ -279,35 +308,33 @@ function PhrasePractice({ onLearn, learned }) {
       {/* Tone ladder */}
       {revealed && (
         <>
-          <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-            <div style={{ fontSize: "11px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "14px" }}>Tone Ladder</div>
+          <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "14px" }}>Tone Ladder</div>
             {item.toneLadder.map((t, i) => (
               <div key={i} style={{
-                display: "flex", gap: "12px", padding: "14px 16px",
-                borderRadius: "14px", marginBottom: "8px",
-                background: t.best ? item.color : "#F9FAFB",
-                border: `1.5px solid ${t.best ? item.color : "#EDE0D4"}`,
+                display: "flex", gap: "12px", padding: "13px 16px",
+                borderRadius: B.radius.md, marginBottom: "8px",
+                background: t.best ? B.charcoal : B.parchment,
+                border: `1.5px solid ${t.best ? B.charcoal : B.sand}`,
               }}>
-                <div style={{ fontSize: "11px", fontWeight: "800", minWidth: "68px", color: t.best ? "rgba(255,255,255,0.8)" : "#D1D5DB", textTransform: "uppercase", letterSpacing: "0.5px", paddingTop: "2px", flexShrink: 0 }}>{t.label}</div>
-                <div style={{ fontSize: "15px", color: t.best ? "#fff" : "#6B7280", lineHeight: "1.55", fontWeight: t.best ? "600" : "400" }}>"{t.example}"</div>
+                <div style={{ fontSize: "10px", fontWeight: "800", minWidth: "64px", color: t.best ? B.clay : B.mist, textTransform: "uppercase", letterSpacing: "0.8px", paddingTop: "2px", flexShrink: 0 }}>{t.label}</div>
+                <div style={{ fontSize: "15px", color: t.best ? B.warmWhite : B.dusk, lineHeight: "1.55", fontFamily: t.best ? B.serif : B.sans, fontStyle: t.best ? "italic" : "normal" }}>"{t.example}"</div>
               </div>
             ))}
           </div>
 
           {/* Tip */}
-          <div style={{ background: "#FDF0E8", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F0C4A0" }}>
-            <div style={{ fontSize: "11px", fontWeight: "800", color: "#7B3015", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "8px" }}>💡 Why it works</div>
-            <div style={{ fontSize: "15px", color: "#7B3015", lineHeight: "1.65" }}>{item.tip}</div>
+          <div style={{ background: B.warningLight, borderRadius: B.radius.lg, padding: "18px 20px", marginBottom: "16px", border: `1.5px solid #F0D5A8` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.warning, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>💡 Why it works</div>
+            <div style={{ fontSize: "15px", color: "#6B4A1A", lineHeight: "1.65" }}>{item.tip}</div>
           </div>
 
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
             {!saved
-              ? <PillBtn onClick={handleSave} color="#fff" bg="#2C1810">Save to Review ✓</PillBtn>
-              : <div style={{ fontSize: "14px", fontWeight: "700", color: "#C4622D", padding: "13px 0" }}>✓ Saved</div>
+              ? <PillBtn onClick={handleSave} variant="dark">Save to Review ✓</PillBtn>
+              : <div style={{ fontSize: "14px", fontWeight: "600", color: B.success, padding: "12px 0" }}>✓ Saved</div>
             }
-            <PillBtn onClick={handleNext} color="#2C1810" bg="#EDE0D4">
-              {idx < PHRASE_SITUATIONS.length - 1 ? "Next →" : "Start Over"}
-            </PillBtn>
+            <PillBtn onClick={handleNext} variant="secondary">{idx < PHRASE_SITUATIONS.length - 1 ? "Next →" : "Start Over"}</PillBtn>
           </div>
         </>
       )}
@@ -332,85 +359,70 @@ function VocabPractice({ onLearn, learned }) {
 
   return (
     <div style={{ padding: "0 20px 100px" }}>
-      {/* Header */}
-      <div style={{ background: item.color, borderRadius: "24px", padding: "24px", marginBottom: "20px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-          <div style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>{item.category}</div>
-          <ProgressDots current={idx} total={VOCAB_ITEMS.length} color="#fff" />
-        </div>
-        <div style={{ fontSize: "20px", fontWeight: "800", color: "#fff", lineHeight: "1.4", letterSpacing: "-0.5px" }}>
-          "{item.situation}"
-        </div>
-      </div>
+      <SituationCard situation={item.situation} category={item.category} idx={idx} total={VOCAB_ITEMS.length} />
 
-      {/* Fill in blank */}
-      <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-        <div style={{ fontSize: "11px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "14px" }}>Fill in the blank</div>
-        <div style={{ fontSize: "17px", color: "#2C1810", lineHeight: "2.0", marginBottom: "16px", fontWeight: "500" }}>
+      {/* Fill blank */}
+      <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+        <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "14px" }}>Fill in the blank</div>
+        <div style={{ fontSize: "16px", color: B.charcoal, lineHeight: "2.1", background: B.parchment, borderRadius: B.radius.md, padding: "14px 16px", marginBottom: "16px" }}>
           {parts[0]}
           {!revealed ? (
             <input style={{
-              border: "none", borderBottom: '3px solid #C4622D',
-              background: "transparent", color: "#C4622D", fontSize: "17px",
-              fontFamily: font, fontWeight: "800", padding: "2px 8px",
+              border: "none", borderBottom: `2.5px solid ${B.clay}`,
+              background: "transparent", color: B.clay, fontSize: "16px",
+              fontFamily: B.sans, fontWeight: "700", padding: "2px 6px",
               outline: "none", minWidth: "120px", textAlign: "center", margin: "0 4px",
             }} value={input} onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleCheck()} placeholder="___" />
           ) : (
-            <span style={{ background: "#C4622D", color: "#fff", borderRadius: "8px", padding: "3px 12px", margin: "0 4px", fontWeight: "900", fontSize: "17px" }}>{item.answer}</span>
+            <span style={{ background: B.clay, color: "#fff", borderRadius: B.radius.sm, padding: "3px 12px", margin: "0 4px", fontWeight: "700", fontSize: "16px" }}>{item.answer}</span>
           )}
           {parts[1]}
         </div>
-
         {!revealed && (
           <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
-            <PillBtn onClick={handleCheck} color="#fff" bg={item.color}>Check Answer</PillBtn>
-            {wrong && <PillBtn onClick={() => setRevealed(true)} color="#2C1810" bg="#EDE0D4">Reveal</PillBtn>}
+            <PillBtn onClick={handleCheck}>Check Answer</PillBtn>
+            {wrong && <PillBtn onClick={() => setRevealed(true)} variant="secondary">Reveal</PillBtn>}
+            {wrong && <div style={{ fontSize: "14px", color: B.error, fontWeight: "600" }}>Not quite — try again</div>}
           </div>
-        )}
-        {wrong && !revealed && (
-          <div style={{ marginTop: "12px", fontSize: "14px", color: "#C0392B", fontWeight: "600" }}>Not quite — try again</div>
         )}
       </div>
 
-      {/* Word reveal */}
+      {/* Reveal */}
       {revealed && (
         <>
-          <div style={{ background: item.color, borderRadius: "20px", padding: "28px 24px", marginBottom: "14px", textAlign: "center" }}>
-            <div style={{ fontSize: "48px", fontWeight: "900", color: "#fff", letterSpacing: "-2px", lineHeight: 1, marginBottom: "10px" }}>{item.word}</div>
-            <div style={{ fontSize: "16px", color: "rgba(255,255,255,0.85)", lineHeight: "1.5", fontWeight: "500" }}>{item.definition}</div>
+          <div style={{ background: B.charcoal, borderRadius: B.radius.lg, padding: "28px 24px", marginBottom: "12px", textAlign: "center" }}>
+            <div style={{ fontSize: "44px", fontFamily: B.serif, color: B.warmWhite, letterSpacing: "-1.5px", lineHeight: 1, marginBottom: "10px", fontStyle: "italic" }}>{item.word}</div>
+            <div style={{ fontSize: "15px", color: B.dusk, lineHeight: "1.55" }}>{item.definition}</div>
           </div>
 
-          <div style={{ background: "#FDF0E8", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F0C4A0" }}>
-            <div style={{ fontSize: "11px", fontWeight: "800", color: "#7B3015", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "8px" }}>💡 Tone Feel</div>
-            <div style={{ fontSize: "15px", color: "#7B3015", lineHeight: "1.65" }}>{item.toneNote}</div>
+          <div style={{ background: B.warningLight, borderRadius: B.radius.lg, padding: "18px 20px", marginBottom: "12px", border: `1.5px solid #F0D5A8` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.warning, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>💡 Tone Feel</div>
+            <div style={{ fontSize: "15px", color: "#6B4A1A", lineHeight: "1.65" }}>{item.toneNote}</div>
           </div>
 
-          <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-            <div style={{ fontSize: "11px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "14px" }}>vs. Similar Words</div>
+          <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "14px" }}>vs. Similar Words</div>
             {item.similarWords.map((s, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 16px", background: "#FAF7F2", borderRadius: "12px", marginBottom: "8px" }}>
-                <span style={{ fontWeight: "800", color: "#C4622D", fontSize: "16px" }}>{s.word}</span>
-                <span style={{ fontSize: "13px", color: "#A0856C" }}>{s.feel}</span>
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "11px 14px", background: B.parchment, borderRadius: B.radius.md, marginBottom: "7px", border: `1.5px solid ${B.sand}` }}>
+                <span style={{ fontWeight: "700", color: B.clay, fontSize: "15px", fontFamily: B.serif, fontStyle: "italic" }}>{s.word}</span>
+                <span style={{ fontSize: "13px", color: B.mist }}>{s.feel}</span>
               </div>
             ))}
           </div>
 
-          <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-            <div style={{ fontSize: "11px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "14px" }}>Real Examples</div>
+          <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "16px", border: `1.5px solid ${B.sand}` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "14px" }}>Real Examples</div>
             {item.examples.map((ex, i) => (
-              <div key={i} style={{ padding: "12px 16px", background: "#FAF7F2", borderRadius: "12px", marginBottom: "8px", fontSize: "15px", color: "#4A3728", lineHeight: "1.6", borderLeft: "3px solid #111111" }}>
+              <div key={i} style={{ padding: "12px 14px", background: B.parchment, borderRadius: B.radius.md, marginBottom: "7px", fontSize: "15px", color: B.dusk, lineHeight: "1.6", borderLeft: `3px solid ${B.clay}` }}>
                 "{ex}"
               </div>
             ))}
           </div>
 
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            {!saved
-              ? <PillBtn onClick={handleSave} color="#fff" bg="#2C1810">Save to Review ✓</PillBtn>
-              : <div style={{ fontSize: "14px", fontWeight: "700", color: "#C4622D", padding: "13px 0" }}>✓ Saved</div>
-            }
-            <PillBtn onClick={handleNext} color="#2C1810" bg="#EDE0D4">{idx < VOCAB_ITEMS.length - 1 ? "Next →" : "Start Over"}</PillBtn>
+            {!saved ? <PillBtn onClick={handleSave} variant="dark">Save to Review ✓</PillBtn> : <div style={{ fontSize: "14px", fontWeight: "600", color: B.success, padding: "12px 0" }}>✓ Saved</div>}
+            <PillBtn onClick={handleNext} variant="secondary">{idx < VOCAB_ITEMS.length - 1 ? "Next →" : "Start Over"}</PillBtn>
           </div>
         </>
       )}
@@ -427,58 +439,53 @@ function Review({ learned, onUpdateReview }) {
 
   if (learned.length === 0) return (
     <div style={{ padding: "60px 20px", textAlign: "center" }}>
-      <div style={{ fontSize: "64px", marginBottom: "20px" }}>📭</div>
-      <div style={{ fontSize: "24px", fontWeight: "900", color: "#2C1810", letterSpacing: "-0.5px", marginBottom: "10px" }}>Nothing yet</div>
-      <div style={{ fontSize: "16px", color: "#A0856C", lineHeight: "1.6" }}>Practice phrases and vocab, then save to build your queue. Items surface at 1 → 3 → 7 → 14 days.</div>
+      <div style={{ fontSize: "52px", marginBottom: "20px", fontFamily: B.serif, color: B.sand }}>∅</div>
+      <div style={{ fontSize: "24px", fontFamily: B.serif, color: B.charcoal, marginBottom: "10px" }}>Nothing yet</div>
+      <div style={{ fontSize: "15px", color: B.mist, lineHeight: "1.7" }}>Practice and save items to build your queue. They surface at 1 → 3 → 7 → 14 days.</div>
     </div>
   );
 
   const item = learned[idx % learned.length];
-  const accentColor = item.color || "#2C1810";
   const isLast = idx >= learned.length - 1;
   function handleNext() { onUpdateReview(item.id); setIdx(idx + 1); setInput(""); setRevealed(false); }
 
   return (
     <div style={{ padding: "0 20px 100px" }}>
-      <div style={{ background: accentColor, borderRadius: "24px", padding: "24px", marginBottom: "20px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
-          <div style={{ fontSize: "11px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>{item.type === "phrase" ? "✍️ Phrase" : "💡 Vocab"}</div>
-          <ProgressDots current={idx % learned.length} total={learned.length} color="#fff" />
-        </div>
-        <div style={{ fontSize: "20px", fontWeight: "800", color: "#fff", lineHeight: "1.4", letterSpacing: "-0.5px" }}>"{item.situation}"</div>
-      </div>
+      <SituationCard situation={item.situation} category={item.type === "phrase" ? item.category : item.category} idx={idx % learned.length} total={learned.length} />
 
-      <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-        <div style={{ fontSize: "13px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "12px" }}>{item.prompt}</div>
+      <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+        <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "12px" }}>{item.prompt}</div>
         <textarea style={{
-          width: "100%", boxSizing: "border-box", background: "#FAF7F2",
-          border: `2px solid ${accentColor}`, borderRadius: "14px", padding: "16px",
-          color: "#C4622D", fontSize: "16px", fontFamily: font, lineHeight: "1.7",
-          resize: "none", minHeight: "100px", outline: "none",
+          width: "100%", boxSizing: "border-box", background: B.parchment,
+          border: `1.5px solid ${B.clay}`, borderRadius: B.radius.md, padding: "14px 16px",
+          color: B.charcoal, fontSize: "15px", fontFamily: B.sans, lineHeight: "1.7",
+          resize: "none", minHeight: "95px", outline: "none",
         }} value={input} onChange={e => setInput(e.target.value)} placeholder="Write from memory..." disabled={revealed} />
-        {!revealed && <div style={{ marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
-          <PillBtn onClick={() => setRevealed(true)} disabled={input.trim().length < 3} color="#fff" bg={accentColor}>Check</PillBtn>
-        </div>}
+        {!revealed && (
+          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "12px" }}>
+            <PillBtn onClick={() => setRevealed(true)} disabled={input.trim().length < 3}>Check</PillBtn>
+          </div>
+        )}
       </div>
 
       {revealed && (
         <>
-          <div style={{ background: "#FFF8F0", borderRadius: "20px", padding: "20px", marginBottom: "14px", border: "1.5px solid #F3F4F6" }}>
-            <div style={{ fontSize: "11px", fontWeight: "700", color: "#A0856C", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "14px" }}>{item.type === "phrase" ? "Best Version" : "Answer"}</div>
+          <div style={{ background: B.warmWhite, borderRadius: B.radius.lg, padding: "20px", marginBottom: "12px", border: `1.5px solid ${B.sand}` }}>
+            <div style={{ fontSize: "11px", fontWeight: "700", color: B.mist, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "12px" }}>{item.type === "phrase" ? "Best Version" : "Answer"}</div>
             {item.type === "phrase"
               ? item.toneLadder.filter(t => t.best).map((t, i) => (
-                <div key={i} style={{ background: accentColor, borderRadius: "14px", padding: "16px", marginBottom: "10px", fontSize: "16px", color: "#fff", lineHeight: "1.55", fontWeight: "600" }}>"{t.example}"</div>
+                <div key={i} style={{ background: B.charcoal, borderRadius: B.radius.md, padding: "16px", marginBottom: "10px", fontSize: "16px", fontFamily: B.serif, color: B.warmWhite, lineHeight: "1.5", fontStyle: "italic" }}>"{t.example}"</div>
               ))
-              : <div style={{ background: accentColor, borderRadius: "14px", padding: "20px", textAlign: "center", marginBottom: "10px" }}>
-                <div style={{ fontSize: "36px", fontWeight: "900", color: "#fff", letterSpacing: "-1px" }}>{item.word}</div>
-                <div style={{ fontSize: "15px", color: "rgba(255,255,255,0.85)", marginTop: "8px" }}>{item.definition}</div>
+              : <div style={{ background: B.charcoal, borderRadius: B.radius.md, padding: "20px", textAlign: "center", marginBottom: "10px" }}>
+                <div style={{ fontSize: "36px", fontFamily: B.serif, color: B.warmWhite, letterSpacing: "-1px", fontStyle: "italic" }}>{item.word}</div>
+                <div style={{ fontSize: "14px", color: B.dusk, marginTop: "8px", lineHeight: "1.5" }}>{item.definition}</div>
               </div>
             }
-            <div style={{ background: "#FDF0E8", borderRadius: "12px", padding: "14px", fontSize: "15px", color: "#7B3015", lineHeight: "1.6", border: "1px solid #F0C4A0" }}>
+            <div style={{ background: B.warningLight, borderRadius: B.radius.md, padding: "14px 16px", fontSize: "15px", color: "#6B4A1A", lineHeight: "1.6", border: `1px solid #F0D5A8` }}>
               💡 {item.type === "phrase" ? item.tip : item.toneNote}
             </div>
           </div>
-          <PillBtn onClick={handleNext} color="#fff" bg="#2C1810">{isLast ? "Review Complete 🎉" : "Next →"}</PillBtn>
+          <PillBtn onClick={handleNext} variant="dark">{isLast ? "Review Complete ✓" : "Next →"}</PillBtn>
         </>
       )}
     </div>
@@ -502,30 +509,23 @@ export default function App() {
   }
 
   const tabs = [
-    { id: "home", label: "Home", emoji: "◼" },
-    { id: "phrases", label: "Phrases", emoji: "◎" },
-    { id: "vocab", label: "Vocab", emoji: "◈" },
-    { id: "review", label: learned.length > 0 ? `Review·${learned.length}` : "Review", emoji: "↻" },
+    { id: "home", label: "Home", icon: "◼" },
+    { id: "phrases", label: "Phrases", icon: "◎" },
+    { id: "vocab", label: "Vocab", icon: "◈" },
+    { id: "review", label: learned.length > 0 ? `Review·${learned.length}` : "Review", icon: "↻" },
   ];
 
-  const pageTitles = {
-    home: null,
-    phrases: { title: "Phrase Practice", color: "#2C1810" },
-    vocab: { title: "Vocabulary", color: "#2C1810" },
-    review: { title: "Review Queue", color: "#2C1810" },
-  };
-
-  const pt = pageTitles[tab];
-
   return (
-    <div style={{ minHeight: "100vh", background: "#FAF7F2", fontFamily: font, color: "#2C1810" }}>
+    <div style={{ minHeight: "100vh", background: B.parchment, fontFamily: B.sans, color: B.charcoal }}>
       {/* Header */}
-      <div style={{ background: "#FFF8F0", borderBottom: "1.5px solid #F3F4F6", padding: "16px 20px", position: "sticky", top: 0, zIndex: 10 }}>
+      <div style={{ background: B.warmWhite, borderBottom: `1.5px solid ${B.sand}`, padding: "14px 20px", position: "sticky", top: 0, zIndex: 10 }}>
         <div style={{ maxWidth: "480px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div>
-            <div style={{ fontSize: "18px", fontWeight: "900", letterSpacing: "-0.5px", color: "#2C1810" }}>Confidence</div>
+          <div style={{ fontSize: "18px", fontFamily: B.serif, color: B.charcoal, letterSpacing: "-0.3px" }}>
+            Confidence<span style={{ color: B.clay, fontStyle: "italic" }}>.</span>
           </div>
-          {pt && <div style={{ fontSize: "13px", fontWeight: "700", color: pt.color, background: "#F0DDD0", padding: "4px 12px", borderRadius: "100px" }}>{pt.title}</div>}
+          <div style={{ fontSize: "11px", color: B.mist, letterSpacing: "0.3px" }}>
+            {tab === "home" ? "" : tabs.find(t => t.id === tab)?.label}
+          </div>
         </div>
       </div>
 
@@ -540,23 +540,19 @@ export default function App() {
       {/* Bottom Nav */}
       <div style={{
         position: "fixed", bottom: 0, left: 0, right: 0,
-        background: "#FFF8F0", borderTop: "1.5px solid #F3F4F6",
-        boxShadow: "0 -8px 24px rgba(0,0,0,0.06)", zIndex: 10,
+        background: B.warmWhite, borderTop: `1.5px solid ${B.sand}`,
+        boxShadow: "0 -4px 20px rgba(28,25,23,0.06)", zIndex: 10,
       }}>
         <div style={{ maxWidth: "480px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {tabs.map(t => (
             <button key={t.id} onClick={() => setTab(t.id)} style={{
               display: "flex", flexDirection: "column", alignItems: "center",
-              justifyContent: "center", padding: "12px 4px 14px",
+              justifyContent: "center", padding: "11px 4px 13px",
               background: "transparent", border: "none", cursor: "pointer", gap: "4px",
             }}>
-              <span style={{ fontSize: "22px", lineHeight: 1 }}>{t.emoji}</span>
-              <span style={{
-                fontSize: "10px", fontWeight: "800", letterSpacing: "0.3px",
-                color: tab === t.id ? "#C4622D" : "#C4A882",
-                textTransform: "uppercase",
-              }}>{t.label}</span>
-              {tab === t.id && <div style={{ width: "24px", height: "3px", borderRadius: "2px", background: "#C4622D", marginTop: "2px" }} />}
+              <span style={{ fontSize: "18px", lineHeight: 1, color: tab === t.id ? B.clay : B.mist }}>{t.icon}</span>
+              <span style={{ fontSize: "10px", fontWeight: "700", letterSpacing: "0.8px", textTransform: "uppercase", color: tab === t.id ? B.charcoal : B.mist }}>{t.label}</span>
+              {tab === t.id && <div style={{ width: "18px", height: "2.5px", borderRadius: "2px", background: B.clay, marginTop: "2px" }} />}
             </button>
           ))}
         </div>
